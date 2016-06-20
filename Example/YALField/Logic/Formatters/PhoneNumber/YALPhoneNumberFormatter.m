@@ -37,11 +37,24 @@
 }
 
 - (NSString *)formattedValueFromRawValue:(NSString *)rawValue {
-    NSString *firstPart = [rawValue substringWithRange:NSMakeRange(0, 3)];
-    NSString *secondPart = [rawValue substringWithRange:NSMakeRange(3, 3)];
-    NSString *thirdPart = [rawValue substringWithRange:NSMakeRange(6, 3)];
+    NSString *formattedValue = [NSString new];
     
-    return [NSString stringWithFormat:@"(%@)-%@-%@", firstPart, secondPart, thirdPart];
+    if (rawValue.length >= 3) {
+        NSString *firstPart = [rawValue substringWithRange:NSMakeRange(0, 3)];
+        formattedValue = [formattedValue stringByAppendingFormat:@"(%@)", firstPart];
+    }
+    
+    if (rawValue.length >= 6) {
+        NSString *secondPart = [rawValue substringWithRange:NSMakeRange(3, 3)];
+        formattedValue = [formattedValue stringByAppendingFormat:@"-%@", secondPart];
+    }
+    
+    if (rawValue.length >= 9) {
+        NSString *thirdPart = [rawValue substringWithRange:NSMakeRange(6, 3)];
+        formattedValue = [formattedValue stringByAppendingFormat:@"-%@", thirdPart];
+    }
+    
+    return formattedValue;
 }
 
 - (id)rawValueFromFormattedValue:(NSString *)formattedValue {
