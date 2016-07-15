@@ -58,10 +58,14 @@ static NSString *const kDefaultPasswordViewFontName = @"HelveticaNeue";
 #pragma mark - Action
 
 - (IBAction)showSecuredTextButtonTouchUpInside {
-    if (self.field.secured) {
-        self.field.secured = NO;
-        [YALBaseDataFlowController inputDidReceiveTouchEvent:self.field];
+    self.field.textField.secureTextEntry = !self.field.textField.secureTextEntry;
+    if (self.field.textField.secureTextEntry) {
+        [self.showPasswordButton setTitle:@"SHOW" forState:UIControlStateNormal];
     }
+    else {
+        [self.showPasswordButton setTitle:@"HIDE" forState:UIControlStateNormal];
+    }
+    [YALBaseDataFlowController inputDidReceiveTouchEvent:self.field];
 }
 
 @end
