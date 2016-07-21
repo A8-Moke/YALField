@@ -47,7 +47,7 @@ iOS 8 or higher.
 ####[CocoaPods](http://cocoapods.org)
 
 ``` ruby
-pod 'YALField', '~> 1.0.1'
+pod 'YALField', '~> 1.0.2'
 ```
 
 ####Manual Installation

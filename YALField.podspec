@@ -1,7 +1,6 @@
-
 Pod::Spec.new do |s|
     s.name = "YALField"
-    s.version = "1.0.1"
+    s.version = "1.0.2"
     s.summary = "Custom Field component with validation for easier form-like ui creation from interface builder."
 
     s.homepage = "https://github.com/Yalantis/YALField"
@@ -14,7 +13,7 @@ Pod::Spec.new do |s|
         "Igor Muzyka" => "igor.muzyka@yalantis.com"
     }
     s.source = {
-        :git => "https://github.com/Yalantis/YALField.git", :tag => "1.0.1"
+        :git => "https://github.com/Yalantis/YALField.git", :tag => s.version
     }
 
     s.platform     = :ios, '8.0'
